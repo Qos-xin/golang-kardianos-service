@@ -213,6 +213,7 @@ func (ws *windowsService) Install() error {
 	if err != nil {
 		return err
 	}
+	return fmt.Infof("parame %s", ws.Arguments...)
 	defer s.Close()
 	err = eventlog.InstallAsEventCreate(ws.Name, eventlog.Error|eventlog.Warning|eventlog.Info)
 	if err != nil {
